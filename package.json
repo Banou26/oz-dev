@@ -1,0 +1,16 @@
+{
+  "name": "oz-dev",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "concurrently \"yarn run server\" \"yarn run webpack\"",
+    "server": "node --experimental-modules index.mjs",
+    "webpack": "webpack --watch index=./src/index.js --output-path=./assets --output-filename=index.js"
+  },
+  "devDependencies": {
+    "chokidar": "^2.0.3",
+    "concurrently": "^3.5.1",
+    "uws": "^9.14.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
