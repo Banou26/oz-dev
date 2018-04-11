@@ -18,10 +18,10 @@ chokidar.watch('./assets', {depth: 99}).on('all', _ => wsConnections.forEach(ws 
 const server = http.createServer(async (req, res) => {
   const { pathname } = url.parse(req.url, true)
   try {
-    res.writeHead(200)
+    res.writeHead(200, {'Access-Control-Allow-Origin': '*'})
     res.end(await readFile(`./assets${pathname}`))
   } catch (err) {
-    res.writeHead(404)
+    res.writeHead(404, {'Access-Control-Allow-Origin': '*'})
     res.end()
   }
 })
